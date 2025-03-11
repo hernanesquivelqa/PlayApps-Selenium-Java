@@ -33,7 +33,6 @@ public class MiniAppTest {
         WebElement status = driver.findElement(By.id("status"));
         assertEquals("Status: Not Started", status.getText());
 
-     
         WebElement startButton = driver.findElement(By.id("startButton"));
         startButton.click();
 
