@@ -40,15 +40,18 @@
             <version>5.5.3</version>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <!-- Maven Surefire Plugin for running tests -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.1.2</version>
-            </plugin>
-        </plugins>
-    </build>
+	<build>
+	    <plugins>
+	        <plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-surefire-plugin</artifactId>
+	            <version>3.1.0</version>
+	            <configuration>
+	                <includes>
+	                    <include>**/app/*.java</include>
+	                </includes>
+	            </configuration>
+	        </plugin>
+	    </plugins>
+	</build>
 </project>

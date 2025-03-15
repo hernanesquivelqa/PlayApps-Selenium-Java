@@ -18,8 +18,6 @@ public class PageDynamicTesting {
     private By locatorSpiderManRow = By.xpath("//div[contains(text(),'Spider-Man')]/../../../..");
     private By locatorRealNameSuperHero = By.xpath("//tr//td[3]//span[text()='Peter Parker']");
     
-    
-
     // Constructor
     public PageDynamicTesting(WebDriver driver) {
         this.driver = driver;
