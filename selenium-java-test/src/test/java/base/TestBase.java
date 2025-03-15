@@ -18,10 +18,8 @@ public class TestBase {
 
     @BeforeEach
     public void setup() {
-     
         driver = new ChromeDriver();
     }
-
     @AfterEach
     public void teardown() {
   

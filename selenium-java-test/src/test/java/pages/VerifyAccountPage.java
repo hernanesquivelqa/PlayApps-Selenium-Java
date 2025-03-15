@@ -34,7 +34,7 @@ public class VerifyAccountPage {
     	    }
     		
     	} else {
-    		throw new RuntimeException("No se encontraron inputs en la página.");
+    		throw new RuntimeException("Inputs were not found on the page.");
     	}
     }
     public String getSuccessText() {
