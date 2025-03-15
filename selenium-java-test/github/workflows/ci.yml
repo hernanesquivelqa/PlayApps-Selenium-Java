@@ -1,0 +1,34 @@
+name: Java Maven CI
+
+on:
+  push:
+    branches:
+      - main # Cambia por la rama que estés usando
+  pull_request:
+    branches:
+      - main # Cambia por la rama que estés usando
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adoptopenjdk'
+
+      - name: Set up Maven
+        uses: actions/setup-maven@v2
+        with:
+          maven-version: '3.8.1'
+
+      - name: Build with Maven
+        run: mvn clean install
+
+      - name: Run Tests
+        run: mvn test
