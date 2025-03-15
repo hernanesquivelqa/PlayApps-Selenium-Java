@@ -16,7 +16,7 @@ public class VerifyAccount extends TestBase {
     }
 
     @Test
-    public void testVerifyAccountPage() throws InterruptedException {
+    public void verifySuccessMessageAfterEnteringCode() {
         verifyAccountPage.gotoUrl(); 
         verifyAccountPage.fillInputs("9");
         assertEquals(verifyAccountPage.getSuccessText(), "Success");
