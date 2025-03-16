@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04  # Use a specific Ubuntu version to ensure a newer runner
     permissions:
       contents: read
       packages: write
@@ -54,7 +54,7 @@ jobs:
 
     - name: Upload Test Reports (if failed)
       if: failure()
-      uses: actions/upload-artifact@v3.1.2  # Pin to a specific version
+      uses: actions/upload-artifact@v4  # Update to v4
       with:
         name: surefire-reports
         path: target/surefire-reports/
