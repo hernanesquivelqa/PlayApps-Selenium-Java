@@ -3,7 +3,7 @@ name: Maven Package
 on:
   release:
     types: [created]
-  workflow_dispatch: # Allows manual triggering
+  workflow_dispatch:
 
 jobs:
   build:
@@ -28,19 +28,17 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y google-chrome-stable
-        google-chrome --version  # Verify Chrome installation
+        google-chrome --version
 
     - name: Debug Environment
       run: |
         java -version
         mvn -version
         ls -la ${{ github.workspace }}
-        which google-chrome  # Check Chrome path
+        which google-chrome
 
     - name: Build and Test with Maven
-      run: mvn -B test --file pom.xml  # Explicitly run tests first
-      env:
-        DISPLAY: ":99"  # Sometimes needed for headless browsers in CI
+      run: mvn -B test --file pom.xml
 
     - name: Package with Maven
       run: mvn -B package --file pom.xml
@@ -50,9 +48,13 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ github.token }}
 
+    - name: Debug Artifact Path
+      if: failure()
+      run: ls -la target/surefire-reports/ || echo "Directory not found"
+
     - name: Upload Test Reports (if failed)
       if: failure()
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3.1.2  # Pin to a specific version
       with:
         name: surefire-reports
         path: target/surefire-reports/
