@@ -1,4 +1,5 @@
 package pages;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,28 +22,24 @@ public class VerifyAccountPage {
         driver.get(url);
     }
     
-
     public void fillInputs(String value) {
-    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    	List<WebElement> inputElements = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(inputs));
-    	
-    	if(!inputElements.isEmpty()) {
-    	    int sizeInputs = inputElements.size() - 1;
-    	    for  (int i= 0; i <= sizeInputs; i++) {
-    	    	WebElement eachInput = inputElements.get(i);
-    	    	eachInput.clear();
-    	    	eachInput.sendKeys(value);
-    	    }
-    		
-    	} else {
-    		throw new RuntimeException("Inputs were not found on the page.");
-    	}
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        List<WebElement> inputElements = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(inputs));
+        
+        if (!inputElements.isEmpty()) {
+            int sizeInputs = inputElements.size() - 1;
+            for (int i = 0; i <= sizeInputs; i++) {
+                WebElement eachInput = inputElements.get(i);
+                eachInput.clear();
+                eachInput.sendKeys(value);
+            }
+        } else {
+            throw new RuntimeException("Inputs were not found on the page.");
+        }
     }
-    public String getSuccessText() {
-    	String text = driver.findElement(successText).getText();
-    	return text;
-    }
-    
-    
-}
 
+    public String getSuccessText() {
+        String text = driver.findElement(successText).getText();
+        return text;
+    }
+}
