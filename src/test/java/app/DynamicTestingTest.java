@@ -8,7 +8,7 @@ import pages.PageDynamicTesting;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class DynamicTesting extends TestBase {
+public class DynamicTestingTest extends TestBase {
     
     private PageDynamicTesting pageDynamicTesting;
     

@@ -12,6 +12,7 @@ public class VerifyAccountPage {
     private String url = "https://qaplayground.dev/apps/verify-account/";
     private By inputs = By.cssSelector("input[type='number']");
     private By successText = By.cssSelector(".info.success");
+    
     public VerifyAccountPage(WebDriver driver) {
         this.driver = driver;
     }

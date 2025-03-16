@@ -6,23 +6,31 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class TestBase {
     protected WebDriver driver;
 
     @BeforeAll
     public static void setupClass() {
-        
         WebDriverManager.chromedriver().setup();
     }
 
     @BeforeEach
     public void setup() {
-        driver = new ChromeDriver();
+     
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");           // Modo sin interfaz gráfica
+        options.addArguments("--no-sandbox");         // Necesario en entornos CI como GitHub Actions
+        options.addArguments("--disable-dev-shm-usage"); // Evita problemas de memoria compartida en CI
+        options.addArguments("--remote-allow-origins=*"); // Soluciona problemas de conexión WebSocket en versiones recientes
+
+        // Inicializar el driver con las opciones
+        driver = new ChromeDriver(options);
     }
+
     @AfterEach
     public void teardown() {
-  
         if (driver != null) {
             driver.quit();
         }

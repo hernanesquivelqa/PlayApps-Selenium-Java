@@ -6,7 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import pages.VerifyAccountPage;
 
-public class VerifyAccount extends TestBase {
+public class VerifyAccountTest extends TestBase {
     private VerifyAccountPage verifyAccountPage;
 
     @BeforeEach
