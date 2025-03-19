@@ -10,14 +10,13 @@ public class VerifyAccountTest extends TestBase {
     private VerifyAccountPage verifyAccountPage;
 
     @BeforeEach
-    public void setup() {
-        driver = new ChromeDriver(); 
+    public void setupUpPage() {
         verifyAccountPage = new VerifyAccountPage(driver); 
+    	goToUrl(verifyAccountPage.getUrl());
     }
 
     @Test
     public void verifySuccessMessageAfterEnteringCode() {
-        verifyAccountPage.gotoUrl(); 
         verifyAccountPage.fillInputs("9");
         assertEquals(verifyAccountPage.getSuccessText(), "Success");
     }

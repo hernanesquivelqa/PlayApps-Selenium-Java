@@ -35,10 +35,9 @@ public class PageDynamicTesting {
         return this.titleWebPage;
     }
     
-    public void gotoUrl() {
-        driver.get(url);
+    public String getUrl() {
+        return this.url;
     }
-    
     public WebElement superHeroBeVisible() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));  
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locatorSuperHeroHeader));

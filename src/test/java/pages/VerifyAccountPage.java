@@ -18,8 +18,8 @@ public class VerifyAccountPage {
         this.driver = driver;
     }
 
-    public void gotoUrl() {
-        driver.get(url);
+    public String getUrl() {
+        return this.url;
     }
     
     public void fillInputs(String value) {

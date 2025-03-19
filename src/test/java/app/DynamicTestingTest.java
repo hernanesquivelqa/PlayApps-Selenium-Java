@@ -15,7 +15,7 @@ public class DynamicTestingTest extends TestBase {
     @BeforeEach
     public void setUpPage() {
         pageDynamicTesting = new PageDynamicTesting(driver);
-        pageDynamicTesting.gotoUrl();
+        goToUrl(pageDynamicTesting.getUrl());
     }
     @Test
     public void testCurrentTitleWebPage() {
