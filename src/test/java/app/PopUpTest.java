@@ -1,6 +1,5 @@
 package app;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +15,7 @@ public class PopUpTest extends TestBase {
 		
 	}
 	@Test
-	public void openPopUp() throws InterruptedException {
+	public void openPopUp() {
 		page.clickButton();
 		page.popUpClickSubmit();
 	    assertEquals(page.getButtonClicked(), page.getInfoText());
