@@ -20,7 +20,7 @@ public class TestBase {
     public void setup() {
      
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");   // Modo sin interfaz gráfica
+        options.addArguments("--headless");
         options.addArguments("--no-sandbox");         // Necesario en entornos CI como GitHub Actions
         options.addArguments("--disable-dev-shm-usage"); // Evita problemas de memoria compartida en CI
         options.addArguments("--remote-allow-origins=*"); // Soluciona problemas de conexión WebSocket en versiones recientes
