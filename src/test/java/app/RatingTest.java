@@ -14,7 +14,7 @@ public class RatingTest extends TestBase {
     @BeforeEach
     public void initializePage() {
         ratingPage = new RatingPage(driver);
-        goToUrl(ratingPage.getUrl());
+        goToUrl(ratingPage.getPageUrl());
     }
 
     @Test
@@ -22,5 +22,14 @@ public class RatingTest extends TestBase {
         ratingPage.selectOneStar();
         String displayedRatingMessage = ratingPage.getRatingMessage();
         assertTrue(displayedRatingMessage.contains("I just hate it"));
+        String displayRatingNumber = ratingPage.getRatingNumber();
+        assertTrue(displayRatingNumber.contains("1 out of 5"));
+        
     }
+    @Test
+    public void eachStar() {
+      ratingPage.eachStarClick();
+    	  
+    }
+    
 }
