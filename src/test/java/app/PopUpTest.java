@@ -4,12 +4,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import base.TestBase;
-import pages.PagePopUp;
+import pages.PopUpPage;
 public class PopUpTest extends TestBase {
-	private PagePopUp page;
+	private PopUpPage page;
 	@BeforeEach
 	public void setupUpPage() {
-		page = new PagePopUp(driver);
+		page = new PopUpPage(driver);
 		goToUrl(page.getUrl());
 		assertEquals(page.getButtonNotClicked(), page.getInfoText());
 		

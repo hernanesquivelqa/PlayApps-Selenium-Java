@@ -7,13 +7,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class PageShadowDom {
+public class ShadowDomPage {
 	private WebDriver driver;
 	@FindBy(tagName = "progress-bar" )
 	private WebElement progressBar;
 	
 	private String url = "https://qaplayground.dev/apps/shadow-dom/";
-  public PageShadowDom(WebDriver driver) {
+  public ShadowDomPage(WebDriver driver) {
 	  this.driver = driver;
 	  PageFactory.initElements(driver, this);
 	  

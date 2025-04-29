@@ -1,14 +1,14 @@
 package app;
-import pages.PageCookie;
+import pages.CoockiePage;
 import base.TestBase;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 public class CookieTest extends TestBase {
-	private PageCookie page;
+	private CoockiePage page;
 	@BeforeEach
 	public void setupPage() {
-	    page = new PageCookie(driver);
+	    page = new CoockiePage(driver);
 	}
 	@Test
 	public void test_login_in() {

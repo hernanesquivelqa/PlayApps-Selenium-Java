@@ -10,14 +10,14 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import base.TestBase;
-import pages.PageShadowDom;
+import pages.ShadowDomPage;
 
 public class ShadowDomTest extends TestBase {
-	private PageShadowDom pageShadowDom;
+	private ShadowDomPage pageShadowDom;
 	
 	@BeforeEach
     public void  setUpPage() {
-		pageShadowDom = new PageShadowDom(driver);
+		pageShadowDom = new ShadowDomPage(driver);
 		goToUrl(pageShadowDom.getUrl());
 		
 	}

@@ -11,7 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-public class PageCookie {
+public class CoockiePage {
 	private String url = "https://demo.guru99.com/test/cookie/selenium_aut.php";
 	private WebDriver driver;
     @FindBy(css = "h2.form-signin-heading center")
@@ -23,7 +23,7 @@ public class PageCookie {
 	private WebElement password;
 	@FindBy(css = "[name='submit']")
 	private WebElement submit;
-	public PageCookie(WebDriver driver){
+	public CoockiePage(WebDriver driver){
 		this.driver = driver;
 		 PageFactory.initElements(driver, this);
 	}

@@ -6,13 +6,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
-public class PageTagsInputBox {
+public class TagsInputBoxPage {
     private WebDriver driver;
     private By tags = By.cssSelector(".content ul li");
     private By inputField = By.cssSelector(".content ul input"); 
     private String url = "https://qaplayground.dev/apps/tags-input-box/";
 
-    public PageTagsInputBox(WebDriver driver) {
+    public TagsInputBoxPage(WebDriver driver) {
         this.driver = driver;
     }
 

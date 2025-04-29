@@ -4,17 +4,17 @@ import org.openqa.selenium.WebElement;
 import base.TestBase;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import pages.PageDynamicTesting;
+import pages.DynamicTestingPage;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class DynamicTestingTest extends TestBase {
     
-    private PageDynamicTesting pageDynamicTesting;
+    private DynamicTestingPage pageDynamicTesting;
     
     @BeforeEach
     public void setUpPage() {
-        pageDynamicTesting = new PageDynamicTesting(driver);
+        pageDynamicTesting = new DynamicTestingPage(driver);
         goToUrl(pageDynamicTesting.getUrl());
     }
     @Test

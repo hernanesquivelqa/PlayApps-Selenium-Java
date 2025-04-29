@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;  
 import java.time.Duration; 
 
-public class PageDynamicTesting {
+public class DynamicTestingPage {
     private WebDriver driver;
     private String url = "https://qaplayground.dev/apps/dynamic-table/";
     private By locatorTitulo = By.tagName("h1");
@@ -19,7 +19,7 @@ public class PageDynamicTesting {
     private By locatorRealNameSuperHero = By.xpath("//tr//td[3]//span[text()='Peter Parker']");
     
     // Constructor
-    public PageDynamicTesting(WebDriver driver) {
+    public DynamicTestingPage(WebDriver driver) {
         this.driver = driver;
     }
 

@@ -8,14 +8,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import base.TestBase;
-import pages.PageTagsInputBox;
+import pages.TagsInputBoxPage;
 public class TagsInputBoxTest extends TestBase {
-	private PageTagsInputBox pageTagsInputBox;
+	private TagsInputBoxPage pageTagsInputBox;
 
 	
 	@BeforeEach
 	public void setupUpPage() {
-		pageTagsInputBox = new PageTagsInputBox(driver);
+		pageTagsInputBox = new TagsInputBoxPage(driver);
 	    goToUrl(pageTagsInputBox.getUrl());
 	}
 	@Test
